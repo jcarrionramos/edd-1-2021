@@ -31,4 +31,52 @@ public class LinkedList {
     tail.next = newNode;
     tail = newNode;
   }
+
+  public Integer popFront() {
+    if (head == null) {
+      return null;
+    }
+
+    int returnValue = head.value;
+    if (head == tail) {
+      head = tail = null;
+      return returnValue;
+    }
+
+    head = head.next;
+    return returnValue;
+  }
+
+  public Integer popBack() {
+    if (head == null) {
+      return null;
+    }
+
+    int returnValue = tail.value;
+    if (head == tail) {
+      head = tail = null;
+      return returnValue;
+    }
+
+    Node temp = head;
+    while (temp.next != tail) {
+      temp = temp.next;
+    }
+
+    temp.next = null;
+    tail = temp;
+    return returnValue;
+  }
+
+  public boolean find(int value) {
+    Node current = head;
+    while (current != null) {
+      if (current.value == value) {
+        return true;
+      }
+      current = current.next;
+    }
+
+    return false;
+  }
 }
