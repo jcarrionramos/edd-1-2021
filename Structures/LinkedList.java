@@ -79,4 +79,11 @@ public class LinkedList {
 
     return false;
   }
+
+  public Integer getFirst() {
+    if (head == null) {
+      return null;
+    }
+    return head.value;
+  }
 }
