@@ -2,8 +2,8 @@ import java.util.*;
 
 public class Main {
   public static void main(String[] args) {
-    LinkedList<Integer> list =  new LinkedList<>();
-    ArrayList<Integer> arrayList = new ArrayList<>();
-    Vector<Integer> vector = new Vector<>()
+    int[] arr = { 3, 5, 6, 3, 23, 387, 23, 43 };
+    Arrays.sort(arr);
+    System.out.println("Hola Mundo!");
   }
 }
