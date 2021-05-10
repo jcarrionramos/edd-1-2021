@@ -55,9 +55,9 @@ public class BinarySearchTree {
       return new TreeNode(value);
 
     if (value < current.value)
-      current.value = insertRec(current.left, value);
+      current.left = insertRec(current.left, value);
     else
-      current.value = insertRec(current.right, value);
+      current.right = insertRec(current.right, value);
 
     return current;
   }
