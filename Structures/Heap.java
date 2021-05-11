@@ -34,7 +34,7 @@ public class Heap {
   }
 
   public boolean isLeaf(int pos) {
-    if (pos >= ((size - 1) / 2) && pos <= (size - 1)) {
+    if (pos >= size / 2 && pos <= size) {
       return true;
     }
     return false;
