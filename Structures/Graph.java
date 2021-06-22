@@ -97,4 +97,48 @@ public class Graph {
       }
     }
   }
+
+  private int minKeyIndex(int[] key, boolean[] visited) {
+    int min = Integer.MAX_VALUE;
+    int minIndex = -1;
+
+    for (int i = 0; i < V; i++) {
+      if (!visited[i] && key[i] < min) {
+        min = key[i];
+        minIndex = i;
+      }
+    }
+
+    return minIndex;
+  }
+
+  public int[] prim() {
+    int[] parent = new int[V];
+    int[] key = new int[V];
+    boolean[] visited = new boolean[V];
+
+    for (int i = 0; i < V; i++) {
+      key[i] = Integer.MAX_VALUE;
+      visited[i] = false;
+    }
+
+    // Partida en el Nodo 0;
+    parent[0] = -1;
+    key[0] = 0;
+
+    for (int i = 0; i < V - 1; i++) {
+      int minIndex = minKeyIndex(key, visited);
+      visited[minIndex] = true;
+
+      for (int neighbor = 0; neighbor < V; neighbor++) {
+        int edge = matrix[minIndex][neighbor];
+        if (edge != 0 && !visited[neighbor] && edge < key[neighbor]) {
+          parent[neighbor] = minIndex;
+          key[neighbor] = edge;
+        }
+      }
+    }
+
+    return parent;
+  }
 }
