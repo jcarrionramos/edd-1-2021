@@ -1,10 +1,8 @@
-import java.util.Comparator;
-import java.util.PriorityQueue;
+import Structures.Graph;
 
 public class Main {
   public static void main(String[] arg) {
-    PriorityQueue<Integer> minHeap = new PriorityQueue<>();
-    PriorityQueue<Integer> maxHeap = new PriorityQueue<>(Comparator.reverseOrder());
+    Graph g = new Graph(9);
   }
 
 }
